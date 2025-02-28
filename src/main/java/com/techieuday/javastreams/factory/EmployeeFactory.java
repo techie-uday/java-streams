@@ -1,6 +1,6 @@
 package com.techieuday.javastreams.factory;
 
-import com.techieuday.javastreams.models.Employee;
+import com.techieuday.javastreams.model.Employee;
 
 import java.util.List;
 import java.util.stream.Stream;

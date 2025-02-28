@@ -1,7 +1,7 @@
 package com.techieuday.javastreams.sections.section3.intermediate.ops;
 
 import com.techieuday.javastreams.factory.EmployeeFactory;
-import com.techieuday.javastreams.models.Employee;
+import com.techieuday.javastreams.model.Employee;
 
 import java.util.*;
 

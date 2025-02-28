@@ -1,4 +1,4 @@
-package com.techieuday.javastreams.models;
+package com.techieuday.javastreams.model;
 
 import java.util.Date;
 
