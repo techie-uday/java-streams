@@ -1,0 +1,6 @@
+Java is a powerful programming language.
+Streams in Java help process data efficiently.
+Functional programming with streams is concise and readable.
+Performance optimizations can be done using parallel streams.
+Streams can read, filter, and transform file content easily.
+Learning Java Streams improves coding efficiency.
