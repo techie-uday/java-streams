@@ -1,4 +1,4 @@
-package com.techieuday.javastreams.util;
+package com.techieuday.javastreams.utils;
 
 
 import net.datafaker.Faker;

@@ -3,7 +3,7 @@ package com.techieuday.javastreams.sections.section1;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.techieuday.javastreams.util.CommonUtils.range;
+import static com.techieuday.javastreams.utils.CommonUtils.range;
 
 public class WhyStreams {
 
