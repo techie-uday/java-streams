@@ -3,7 +3,7 @@ package com.techieuday.javastreams.sections.section2.streamcreation;
 import java.util.*;
 import java.util.stream.Stream;
 
-import static com.techieuday.javastreams.utils.CommonUtils.generateRandomNames;
+import static com.techieuday.javastreams.utils.CommonUtils.randomNames;
 import static com.techieuday.javastreams.utils.CommonUtils.range;
 
 public class StreamsFromCollections {
@@ -16,7 +16,7 @@ public class StreamsFromCollections {
     }
 
     public static void createStreamFromList() {
-        List<String> names = generateRandomNames(20);
+        List<String> names = randomNames(20);
         Stream<String> nameStream = names.stream();
         nameStream.forEach(System.out::println);
     }
@@ -43,7 +43,7 @@ public class StreamsFromCollections {
 
     public static void createParallelStreamFromList() {
 //        Generates 1 Million Names
-        List<String> names = generateRandomNames(1_000_000);
+        List<String> names = randomNames(1_000_000);
         Stream<String> nameStream = names.parallelStream();
         nameStream.forEach(System.out::println);
     }

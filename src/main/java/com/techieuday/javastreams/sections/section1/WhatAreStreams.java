@@ -3,13 +3,13 @@ package com.techieuday.javastreams.sections.section1;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.techieuday.javastreams.utils.CommonUtils.generateRandomNames;
+import static com.techieuday.javastreams.utils.CommonUtils.randomNames;
 
 public class WhatAreStreams {
 
     public static void main(String[] args) {
         long generationStartTime = System.currentTimeMillis();
-        List<String> randomNames = generateRandomNames(10000000);
+        List<String> randomNames = randomNames(10000000);
         long generationTime = System.currentTimeMillis() - generationStartTime;
         System.out.println("Names Generation has taken: " + generationTime + " ms");
 
