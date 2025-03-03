@@ -3,7 +3,7 @@ package com.techieuday.javastreams.sections.section4.terminal.ops;
 import java.util.*;
 import java.util.function.Consumer;
 
-import static com.techieuday.javastreams.Constants.*;
+import static com.techieuday.javastreams.constants.Constants.*;
 import static com.techieuday.javastreams.utils.CommonUtils.randomNames;
 
 public class SpliteratorDemo {

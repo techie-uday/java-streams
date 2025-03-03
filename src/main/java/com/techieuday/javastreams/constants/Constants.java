@@ -1,4 +1,4 @@
-package com.techieuday.javastreams;
+package com.techieuday.javastreams.constants;
 
 public class Constants {
     public static final int SHORT_LIMIT = 10;
