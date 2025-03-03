@@ -79,4 +79,8 @@ public class CommonUtils {
     public static List<Integer> range(int end) {
         return range(0, end);
     }
+
+    public static int between(int start, int end) {
+        return faker.number().numberBetween(start, end);
+    }
 }

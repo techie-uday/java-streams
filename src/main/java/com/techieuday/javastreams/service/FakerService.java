@@ -69,7 +69,7 @@ public class FakerService {
     }
 
     public static double getSalary() {
-        return faker.number().randomDouble(0, 15, 500) * 1000;
+        return faker.number().randomDouble(0, 150, 5000) * 100;
     }
 
 }
