@@ -3,6 +3,7 @@ package com.techieuday.javastreams.factory;
 import com.techieuday.javastreams.model.Employee;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static com.techieuday.javastreams.service.FakerService.*;

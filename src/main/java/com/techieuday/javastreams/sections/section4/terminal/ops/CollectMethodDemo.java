@@ -14,7 +14,7 @@ public class CollectMethodDemo {
 
         List<String> names = employees.stream()
                 .map(Employee::getName)
-                .collect(Collectors.toList());
+                .toList();
         System.out.println("Employee Names: " + names);
 
         // Collecting departments into a Set
@@ -31,7 +31,7 @@ public class CollectMethodDemo {
         // Using parallel streams for performance
         List<Employee> sortedEmployees = employees.parallelStream()
                 .sorted(Comparator.comparing(Employee::getSalary))
-                .collect(Collectors.toList());
+                .toList();
         System.out.println("Sorted Employees: " + sortedEmployees);
     }
 }
