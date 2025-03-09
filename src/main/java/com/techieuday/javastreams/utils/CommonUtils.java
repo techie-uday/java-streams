@@ -83,4 +83,8 @@ public class CommonUtils {
     public static int between(int start, int end) {
         return faker.number().numberBetween(start, end);
     }
+
+    public static List<Integer> randomNumbers(int count) {
+        return IntStream.generate(() -> between(1, 100)).distinct().limit(count).boxed().collect(Collectors.toList());
+    }
 }
