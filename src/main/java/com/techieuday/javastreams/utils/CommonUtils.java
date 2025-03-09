@@ -17,11 +17,12 @@ public class CommonUtils {
     }
 
     // Generates count random names with uniqueness
-    public static List<String> generateRandomNames(long count) {
-        return Stream.generate(CommonUtils::randomName)
-                .distinct() // Ensures unique names
-                .limit(count)
-                .collect(Collectors.toList());
+    public static List<String> randomNames(long count) {
+        return randomNameStream(count).collect(Collectors.toList());
+    }
+
+    public static Stream<String> randomNameStream(long count) {
+        return Stream.generate(CommonUtils::randomName).distinct().limit(count);
     }
 
     // Generates count random names that start with given prefixes
@@ -31,6 +32,12 @@ public class CommonUtils {
                 .distinct()
                 .limit(count)
                 .collect(Collectors.toList());
+    }
+
+    public static Stream<String> nameStreamIncludes(long count, String... names) {
+        List<String> randomNames = Stream.concat(Stream.of(names), randomNameStream(count - names.length)).collect(Collectors.toList());
+        Collections.shuffle(randomNames);
+        return randomNames.stream();
     }
 
     // Generates count random names that contain given substrings
@@ -54,10 +61,10 @@ public class CommonUtils {
     // Ensures at least N names start with given prefixes while maintaining randomness
     public static List<String> atLeastNNamesStartsWith(long count, int n, String... prefixes) {
         List<String> namesStartsWith = nameStartsWith(n, prefixes);
-        List<String> otherNames = generateRandomNames(count - namesStartsWith.size());
+        List<String> otherNames = randomNames(count - namesStartsWith.size());
 
         List<String> finalNames = Stream.concat(namesStartsWith.stream(), otherNames.stream())
-                                        .collect(Collectors.toList());
+                .collect(Collectors.toList());
 
         Collections.shuffle(finalNames);
         return finalNames;
@@ -71,5 +78,13 @@ public class CommonUtils {
     // Generates a range from 0 to end
     public static List<Integer> range(int end) {
         return range(0, end);
+    }
+
+    public static int between(int start, int end) {
+        return faker.number().numberBetween(start, end);
+    }
+
+    public static List<Integer> randomNumbers(int count) {
+        return IntStream.generate(() -> between(1, 100)).distinct().limit(count).boxed().collect(Collectors.toList());
     }
 }

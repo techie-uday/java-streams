@@ -5,14 +5,14 @@ import com.techieuday.javastreams.model.Employee;
 
 import java.util.*;
 
-import static com.techieuday.javastreams.utils.CommonUtils.generateRandomNames;
+import static com.techieuday.javastreams.utils.CommonUtils.randomNames;
 
 
 public class SortingTechniquesStreams {
 
     public static void main(String[] args) {
 
-        List<String> names = generateRandomNames(15);
+        List<String> names = randomNames(15);
         List<Integer> numbers = Arrays.asList(5, 2, 9, 1, 7);
         List<Employee> employees = EmployeeFactory.randomEmployees(20);
 

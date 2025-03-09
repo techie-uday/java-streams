@@ -1,6 +1,7 @@
 package com.techieuday.javastreams.service;
 
 
+import com.techieuday.javastreams.model.Department;
 import net.datafaker.Faker;
 
 import java.time.Instant;
@@ -59,8 +60,8 @@ public class FakerService {
         return faker.chuckNorris().fact();
     }
     
-    public static String getDepartment() {
-        return faker.company().industry();
+    public static Department getDepartment() {
+        return Department.values()[faker.number().numberBetween(0, Department.values().length - 1)];
     }
 
     public static Date getJoiningDate() {
@@ -68,7 +69,7 @@ public class FakerService {
     }
 
     public static double getSalary() {
-        return faker.number().randomDouble(0, 15, 500) * 1000;
+        return faker.number().randomDouble(0, 150, 5000) * 100;
     }
 
 }

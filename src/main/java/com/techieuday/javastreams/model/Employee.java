@@ -9,7 +9,7 @@ public class Employee {
     private int age;
     private double salary;
     private Date joiningDate;
-    private String department;
+    private Department department;
 
     public String getName() {
         return name;
@@ -27,8 +27,12 @@ public class Employee {
         return joiningDate;
     }
 
-    public String getDepartment() {
+    public Department getDepartment() {
         return department;
+    }
+
+    public String getDepartmentName() {
+        return department.getDisplayName();
     }
 
     public int getId() {
@@ -50,7 +54,7 @@ public class Employee {
         private int age;
         private double salary;
         private Date joiningDate;
-        private String department;
+        private Department department;
 
         public Builder name(String name) {
             this.name = name;
@@ -78,7 +82,7 @@ public class Employee {
             return this;
         }
 
-        public Builder department(String department) {
+        public Builder department(Department department) {
             this.department = department;
             return this;
         }

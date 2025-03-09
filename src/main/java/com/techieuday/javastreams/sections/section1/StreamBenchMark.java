@@ -3,12 +3,12 @@ package com.techieuday.javastreams.sections.section1;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static com.techieuday.javastreams.utils.CommonUtils.generateRandomNames;
+import static com.techieuday.javastreams.utils.CommonUtils.randomNames;
 
 public class StreamBenchMark {
     public static void main(String[] args) {
         int size = 10_000_000;
-        List<String> names = generateRandomNames(size);
+        List<String> names = randomNames(size);
 
         // Traditional Loop Benchmark
         long start = System.currentTimeMillis();
