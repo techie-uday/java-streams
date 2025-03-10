@@ -2,6 +2,7 @@ package com.techieuday.javastreams.factory;
 
 import com.techieuday.javastreams.model.Employee;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -33,11 +34,11 @@ public class EmployeeFactory {
     }
 
     public static List<Employee> createEmployees(long count) {
-        return Stream.generate(EmployeeFactory::createEmployee).limit(count).toList();
+        return new ArrayList<>(Stream.generate(EmployeeFactory::createEmployee).limit(count).toList());
     }
 
     public static List<Employee> randomEmployees(long count) {
-        return Stream.generate(EmployeeFactory::randomEmployee).limit(count).toList();
+        return new ArrayList<>(Stream.generate(EmployeeFactory::randomEmployee).limit(count).toList());
     }
 
     public static Employee copy(Employee employee) {
