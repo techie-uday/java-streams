@@ -27,8 +27,8 @@ public class FindingElementsExample {
         anyName.ifPresent(name -> System.out.println("Any Name: " + name));
 
         // 3. anyMatch()
-        boolean hasBob = names.stream().anyMatch(name -> name.equals("Bob"));
-        System.out.println("Contains Bob: " + hasBob);
+        boolean hasUday = names.stream().anyMatch(name -> name.equals("Uday"));
+        System.out.println("Contains Uday: " + hasUday);
 
         // 4. allMatch()
         boolean allEven = numbers.stream().allMatch(n -> n % 2 == 0);
@@ -45,7 +45,7 @@ public class FindingElementsExample {
         maxAge.ifPresent(age -> System.out.println("Max Age: " + age));
 
         // 7. Finding an Employee
-        Optional<Employee> employee = employees.stream().filter(e -> e.getId() == 2).findFirst();
+        Optional<Employee> employee = employees.stream().filter(e -> e.getId() == 2).findAny();
         employee.ifPresent(e -> System.out.println("Found Employee: " + e.getName()));
     }
 }
