@@ -1,6 +1,7 @@
 package com.techieuday.javastreams.model;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Employee {
 
@@ -33,6 +34,21 @@ public class Employee {
 
     public String getDepartmentName() {
         return department.getDisplayName();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Employee employee)) return false;
+        return id == employee.id && age == employee.age &&
+                Double.compare(salary, employee.salary) == 0 &&
+                Objects.equals(name, employee.name) &&
+                Objects.equals(joiningDate, employee.joiningDate) &&
+                department == employee.department;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, age, salary, joiningDate, department);
     }
 
     public int getId() {
