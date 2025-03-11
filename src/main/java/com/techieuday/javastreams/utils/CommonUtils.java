@@ -87,4 +87,12 @@ public class CommonUtils {
     public static List<Integer> randomNumbers(int count) {
         return IntStream.generate(() -> between(1, 100)).distinct().limit(count).boxed().collect(Collectors.toList());
     }
+
+    public static int randomNumber(int end) {
+        return faker.number().numberBetween(0, end);
+    }
+
+    public static Stream<String> infiniteNameStream() {
+        return Stream.generate(CommonUtils::randomName);
+    }
 }

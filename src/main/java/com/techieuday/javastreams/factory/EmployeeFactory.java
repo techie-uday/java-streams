@@ -4,10 +4,10 @@ import com.techieuday.javastreams.model.Employee;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static com.techieuday.javastreams.service.FakerService.*;
+import static com.techieuday.javastreams.utils.CommonUtils.randomNumber;
 
 public class EmployeeFactory {
     private EmployeeFactory() {}
@@ -39,6 +39,19 @@ public class EmployeeFactory {
 
     public static List<Employee> randomEmployees(long count) {
         return new ArrayList<>(Stream.generate(EmployeeFactory::randomEmployee).limit(count).toList());
+    }
+
+    public static List<Employee> randomEmployeesWithDuplicates(long count, int totalDuplicates, int noOfDuplicateEmployees) {
+        List<Employee> employees = randomEmployees(count - totalDuplicates);
+        int frequency = totalDuplicates / noOfDuplicateEmployees;
+        int start = randomNumber(employees.size()) - frequency;
+        int end = start + frequency;
+        employees.addAll(Stream.generate(() -> EmployeeFactory.copyAny(employees.subList(start, end))).limit(totalDuplicates).toList());
+        return employees;
+    }
+
+    private static Employee copyAny(List<Employee> employees) {
+        return copy(employees.get(randomNumber(employees.size())));
     }
 
     public static Employee copy(Employee employee) {
